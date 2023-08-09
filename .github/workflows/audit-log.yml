@@ -1,0 +1,23 @@
+name: Audit Log
+on:
+  push:
+    branches:
+      - main
+  issues:
+    types:
+      - opened
+      - closed
+  pull_request:
+    types:
+      - opened
+      - closed
+jobs:
+  log_events:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Log event
+        run: |
+          echo "${{ github.event_name }} event occurred at $(date)" >> audit.log

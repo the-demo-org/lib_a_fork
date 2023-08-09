@@ -20,7 +20,7 @@ jobs:
 
       - name: Log event
         run: |
-          echo "${{ github.event_name }} event occurred at $(date)" >> audit.log
+          echo "${{ github.event_name }} event occurred at $(date)" >> audit.txt
         working-directory: ${{ github.workspace }}
 
       - name: Debugging Output

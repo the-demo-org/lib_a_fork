@@ -22,3 +22,8 @@ jobs:
         run: |
           echo "${{ github.event_name }} event occurred at $(date)" >> audit.log
         working-directory: ${{ github.workspace }}
+
+      - name: Debugging Output
+        run: |
+          echo "GitHub Workspace: ${{ github.workspace }}"
+          ls -al ${{ github.workspace }}
